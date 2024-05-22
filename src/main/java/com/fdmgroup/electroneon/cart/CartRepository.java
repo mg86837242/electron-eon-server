@@ -3,7 +3,6 @@ package com.fdmgroup.electroneon.cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.lang.NonNull;
 
 import java.util.List;
@@ -25,19 +24,6 @@ public interface CartRepository extends JpaRepository<Cart, UUID> {
     );
 
     boolean existsById(@NonNull UUID cartId);
-
-    @Modifying(clearAutomatically = true)
-    @Query("UPDATE Cart c SET c.quantity = c.quantity + 1 WHERE c.id = :cartId")
-    void incrementQtyById(
-            @Param(value = "cartId") UUID cartId
-    );
-
-    @Modifying(clearAutomatically = true)
-    @Query("UPDATE Cart c SET c.quantity = CASE WHEN c.quantity > 0 THEN " +
-            "c.quantity - 1 ELSE 0 END WHERE c.id = :cartId")
-    void decrementQtyById(
-            @Param(value = "cartId") UUID cartId
-    );
 
     void deleteByUserId(UUID userId);
 
