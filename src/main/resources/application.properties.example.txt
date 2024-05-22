@@ -1,0 +1,28 @@
+spring.application.name=electron-eon
+
+### Server ###
+### https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.cloud-foundry.custom-context-path ###
+server.port=8080
+server.servlet.context-path=/api/v1
+
+### spring.datasource.X ###
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+
+### spring.jpa.X ###
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true
+
+### Simulate hibernate.format_sql ###
+#logging.level.org.hibernate.SQL=DEBUG
+#logging.pattern.console=%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n
+
+### JwtDecoder ###
+### https://www.danvega.dev/blog/spring-security-jwt ###
+rsa.private-key=classpath:certs/private.pem
+rsa.public-key=classpath:certs/public.pem
+
+logging.level.root=INFO
