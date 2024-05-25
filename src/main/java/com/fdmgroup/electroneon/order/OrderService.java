@@ -83,7 +83,7 @@ public class OrderService {
                 .collect(Collectors.toList());
     }
 
-    public List<OrderDTO> getOrdersByAuthn(Authentication authn) {
+    public List<OrderDTO> getOrdersForCurrUser(Authentication authn) {
         String email = authn.getName();
 
         isEmailExisting(email);
@@ -125,7 +125,7 @@ public class OrderService {
             Authentication authn,
             OrderCreationCustomerRequest request
     ) {
-        // Find the curr authed user based on the email
+        // Find the curr authenticated user based on the email
         String email = authn.getName();
 
         isEmailExisting(email);
@@ -177,7 +177,7 @@ public class OrderService {
                         savedOrderProducts
                 );
 
-        // Discard the cart entries associated w/ the curr authed user after
+        // Discard the cart entries associated w/ the curr authenticated user after
         // placing the order (if there's a feature to let users tick what items
         // to check out, then this line needs to be removed, or replaced with
         // logics to check what item(s) needs to be removed from the cart)

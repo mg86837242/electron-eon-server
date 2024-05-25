@@ -22,16 +22,17 @@ public class OrderCustomerController {
         this.orderService = orderService;
     }
 
+    @GetMapping("/current-user")
+    public List<OrderDTO> getOrdersForCurrUser(Authentication authn) {
+        return orderService.getOrdersForCurrUser(authn);
+    }
+
+    // TODO add logic to examine if the order belongs to the curr user
     @GetMapping("/{id}")
-    public ResponseEntity<OrderWithProductsDTO> getOrderById(@PathVariable UUID id) {
+    public ResponseEntity<OrderWithProductsDTO> getOrderByIdForCurrUser(@PathVariable UUID id) {
         OrderWithProductsDTO order = orderService.getOrderById(id);
 
         return ResponseEntity.ok(order);
-    }
-
-    @GetMapping("/current-user")
-    public List<OrderDTO> getOrdersForCurrUser(Authentication authn) {
-        return orderService.getOrdersByAuthn(authn);
     }
 
     @PostMapping("/current-user")

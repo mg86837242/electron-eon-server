@@ -71,7 +71,7 @@ public class ProductService {
 
         isEmailExisting(email);
 
-        // Find the curr authed user's id based on the email
+        // Find the curr authenticated user's id based on the email
         UUID userId = userRepository
                 .findIdByEmail(email)
                 .orElseThrow(() -> new NotFoundException(
@@ -92,7 +92,7 @@ public class ProductService {
 
         isEmailExisting(email);
 
-        // Find the curr authed user's id based on the email
+        // Find the curr authenticated user's id based on the email
         UUID userId = userRepository
                 .findIdByEmail(email)
                 .orElseThrow(() -> new NotFoundException(
@@ -119,7 +119,7 @@ public class ProductService {
 
         isEmailExisting(email);
 
-        // Find the curr authed user's id based on the email
+        // Find the curr authenticated user's id based on the email
         UUID userId = userRepository
                 .findIdByEmail(email)
                 .orElseThrow(() -> new NotFoundException(
