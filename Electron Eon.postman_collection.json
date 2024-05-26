@@ -1,1552 +1,1612 @@
 {
-  "info": {
-    "_postman_id": "b762380a-0521-42b7-8fb6-5d3d53798f3a",
-    "name": "Electron Eon",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "22567242"
-  },
-  "item": [
-    {
-      "name": "Tests: general",
-      "item": [
-        {
-          "name": "TEST: Roles",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/adminonly",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "adminonly"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: Identification",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{baseUrl}}/identity",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "identity"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: register user",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"email\": \"jess@server.com\",\r\n    \"password\": \"abcd1234\",\r\n    \"firstName\": \"jess\",\r\n    \"lastName\": \"doe\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/users",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "users"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get all products",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/products",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "products"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get product by id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/products/2103757c-2e2d-4dfb-befd-987f4fcce43a",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "products",
-                "2103757c-2e2d-4dfb-befd-987f4fcce43a"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get products by category",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/products?category=computer-accessory",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "products"
-              ],
-              "query": [
-                {
-                  "key": "category",
-                  "value": "computer-accessory"
-                }
-              ]
-            }
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "name": "Tests: admin",
-      "item": [
-        {
-          "name": "TEST: get all users",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/users",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "users"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get user by id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/users/1de64dad-aae0-4004-b4bc-f28c1f46589a",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "users",
-                "1de64dad-aae0-4004-b4bc-f28c1f46589a"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: update user by id",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"email\": \"july@server.com\",\r\n    \"firstName\": \"july\",\r\n    \"lastName\": \"doe\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/users/1c6a97c1-da90-464a-95be-700549add2ea",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "users",
-                "1c6a97c1-da90-464a-95be-700549add2ea"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: delete user by id",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"email\": \"johndoe@server.com\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/users/1c6a97c1-da90-464a-95be-700549add2ea",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "users",
-                "1c6a97c1-da90-464a-95be-700549add2ea"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: add product",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Dell ABC Laptop\",\r\n    \"description\": \"Lorem ipsum dolor sit amet.\",\r\n    \"price\": 123.45,\r\n    \"category\": \"LAPTOP\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/products",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "products"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: update product by id",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Lenovo IdeaPad 1 Laptop\",\r\n    \"description\": \"Lorem ipsum dolor sit amet.\",\r\n    \"price\": 489.8,\r\n    \"category\": \"LAPTOP\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/products/22cd8441-4277-4d7c-bafa-2cd8af3d5cc4",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "products",
-                "22cd8441-4277-4d7c-bafa-2cd8af3d5cc4"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: delete product by id",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Lenovo IdeaPad 1 Laptop\",\r\n    \"description\": \"Lorem ipsum dolor sit amet.\",\r\n    \"price\": 489.8,\r\n    \"category\": \"LAPTOP\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/products/22cd8441-4277-4d7c-bafa-2cd8af3d5cc4",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "products",
-                "22cd8441-4277-4d7c-bafa-2cd8af3d5cc4"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get all orders",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/orders",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "orders"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get order by id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/orders/41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "orders",
-                "41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get order by user id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/orders/by-user-id/1de64dad-aae0-4004-b4bc-f28c1f46589a",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "orders",
-                "by-user-id",
-                "1de64dad-aae0-4004-b4bc-f28c1f46589a"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: update order by id",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"street\": \"456 GHI Street\",\r\n    \"city\": \"JKL\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/orders/42ecab4a-344e-49ba-94f7-ac5f32fe1b82",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "orders",
-                "42ecab4a-344e-49ba-94f7-ac5f32fe1b82"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: delete order by id",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/orders/42ecab4a-344e-49ba-94f7-ac5f32fe1b82",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "orders",
-                "42ecab4a-344e-49ba-94f7-ac5f32fe1b82"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: add order product jt record",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"orderId\": \"42ecab4a-344e-49ba-94f7-ac5f32fe1b82\",\r\n    \"productId\": \"252c3087-57f7-4332-9b22-5d858b302783\",\r\n    \"quantity\": 5\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/order-products",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "order-products"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: update product quantity in order product jt record by id",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/order-products/3420cfa9-854d-4e53-b076-6d7493314c20/update-quantity?quantity=5",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "order-products",
-                "3420cfa9-854d-4e53-b076-6d7493314c20",
-                "update-quantity"
-              ],
-              "query": [
-                {
-                  "key": "quantity",
-                  "value": "5"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: increment product quantity in order product jt record by id",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"quantity\": 5\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/order-products/3420cfa9-854d-4e53-b076-6d7493314c20/increment-quantity",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "order-products",
-                "3420cfa9-854d-4e53-b076-6d7493314c20",
-                "increment-quantity"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: decrement product quantity in order product jt record by id",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"quantity\": 5\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/order-products/3420cfa9-854d-4e53-b076-6d7493314c20/decrement-quantity",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "order-products",
-                "3420cfa9-854d-4e53-b076-6d7493314c20",
-                "decrement-quantity"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: delete order product jt record by id",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/order-products/3420cfa9-854d-4e53-b076-6d7493314c20",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "order-products",
-                "3420cfa9-854d-4e53-b076-6d7493314c20"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: delete order product jt record by order id",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/order-products/by-order-id/42ecab4a-344e-49ba-94f7-ac5f32fe1b82",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "order-products",
-                "by-order-id",
-                "42ecab4a-344e-49ba-94f7-ac5f32fe1b82"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get cart by user id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/carts/by-user-id/1de64dad-aae0-4004-b4bc-f28c1f46589a",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "carts",
-                "by-user-id",
-                "1de64dad-aae0-4004-b4bc-f28c1f46589a"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: delete cart by user id",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/admin/carts/by-user-id/1c6a97c1-da90-464a-95be-700549add2ea",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "admin",
-                "carts",
-                "by-user-id",
-                "1c6a97c1-da90-464a-95be-700549add2ea"
-              ]
-            }
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "name": "Tests: customer",
-      "item": [
-        {
-          "name": "TEST: get current user",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"username\": \"john@server.com\",\r\n    \"password\": \"abcd1234\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/users/current-user",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "users",
-                "current-user"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: update current user",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"email\": \"josh@server.com\",\r\n    \"firstName\": \"josh\",\r\n    \"lastName\": \"doe\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/users/current-user",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "users",
-                "current-user"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: delete current user",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"email\": \"johndoe@server.com\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/users/current-user",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "users",
-                "current-user"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get all products with cart quantities for current user",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/products",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "products"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get product with cart quantity by id for current user",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/products/23d4364f-cd62-4e80-a017-3c16c43a7908",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "products",
-                "23d4364f-cd62-4e80-a017-3c16c43a7908"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get products with cart quantities by category for current user",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/products?category=smartphone",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "products"
-              ],
-              "query": [
-                {
-                  "key": "category",
-                  "value": "smartphone"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get order by id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/orders/41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "orders",
-                "41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get order for current user",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/orders/current-user",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "orders",
-                "current-user"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: add order for current user",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"street\": \"123456 Main Street\",\r\n    \"city\": \"Main City\",\r\n    \"orderProducts\": [\r\n        {\r\n            \"productId\": \"252c3087-57f7-4332-9b22-5d858b302783\",\r\n            \"quantity\": 5\r\n        },\r\n        {\r\n            \"productId\": \"2621f16a-c94f-4225-b817-e54c4fb9d2b9\",\r\n            \"quantity\": 6\r\n        }\r\n    ]\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/orders",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "orders"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get order product jt record by id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/order-products/31b7c3c0-83a4-42bb-97cc-de837b6015a7",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "order-products",
-                "31b7c3c0-83a4-42bb-97cc-de837b6015a7"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get order product jt record by order id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/order-products/by-order-id/41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "order-products",
-                "by-order-id",
-                "41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get cart by id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/carts/51d5f27a-77c9-4fd0-993d-2e2c2c529a0b",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "carts",
-                "51d5f27a-77c9-4fd0-993d-2e2c2c529a0b"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: get cart for current user",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/carts/current-user",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "carts",
-                "current-user"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: upsert product quantity in cart for current user",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/carts/current-user/products/24f8ae7f-de04-4e4e-aa53-2cea8974a861/upsert-quantity?quantity=5",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "carts",
-                "current-user",
-                "products",
-                "24f8ae7f-de04-4e4e-aa53-2cea8974a861",
-                "upsert-quantity"
-              ],
-              "query": [
-                {
-                  "key": "quantity",
-                  "value": "5"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: increment product quantity in cart for current user",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/carts/current-user/products/24f8ae7f-de04-4e4e-aa53-2cea8974a861/increment-quantity",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "carts",
-                "current-user",
-                "products",
-                "24f8ae7f-de04-4e4e-aa53-2cea8974a861",
-                "increment-quantity"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: decrement product quantity in cart for current user",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/carts/current-user/products/24f8ae7f-de04-4e4e-aa53-2cea8974a861/decrement-quantity",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "carts",
-                "current-user",
-                "products",
-                "24f8ae7f-de04-4e4e-aa53-2cea8974a861",
-                "decrement-quantity"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: update product quantity in cart by id",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/carts/54360ebf-2a68-4dcc-b9d2-c12c38e1be21/update-quantity?quantity=5",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "carts",
-                "54360ebf-2a68-4dcc-b9d2-c12c38e1be21",
-                "update-quantity"
-              ],
-              "query": [
-                {
-                  "key": "quantity",
-                  "value": "5"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: increment product quantity in cart by id",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/carts/54360ebf-2a68-4dcc-b9d2-c12c38e1be21/increment-quantity",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "carts",
-                "54360ebf-2a68-4dcc-b9d2-c12c38e1be21",
-                "increment-quantity"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: decrement product quantity in cart by id",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/carts/54360ebf-2a68-4dcc-b9d2-c12c38e1be21/decrement-quantity",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "carts",
-                "54360ebf-2a68-4dcc-b9d2-c12c38e1be21",
-                "decrement-quantity"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: delete cart by id",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/carts/54360ebf-2a68-4dcc-b9d2-c12c38e1be21",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "carts",
-                "54360ebf-2a68-4dcc-b9d2-c12c38e1be21"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "TEST: delete cart for current user",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{baseUrl}}/customer/carts/current-user",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "customer",
-                "carts",
-                "current-user"
-              ]
-            }
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "name": "login: admin (to get bearer token)",
-      "request": {
-        "auth": {
-          "type": "basic",
-          "basic": [
-            {
-              "key": "password",
-              "value": "{{seedAdminPass}}",
-              "type": "string"
-            },
-            {
-              "key": "username",
-              "value": "john@server.com",
-              "type": "string"
-            }
-          ]
-        },
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n    \"username\": \"john@server.com\",\r\n    \"password\": \"abcd1234\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "{{baseUrl}}/auth/login",
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "path": [
-            "auth",
-            "login"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "login: customer (to get bearer token)",
-      "request": {
-        "auth": {
-          "type": "basic",
-          "basic": [
-            {
-              "key": "password",
-              "value": "{{seedAdminPass}}",
-              "type": "string"
-            },
-            {
-              "key": "username",
-              "value": "john@server.com",
-              "type": "string"
-            }
-          ]
-        },
-        "method": "POST",
-        "header": [],
-        "url": {
-          "raw": "{{baseUrl}}/auth/login",
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "path": [
-            "auth",
-            "login"
-          ]
-        }
-      },
-      "response": []
-    }
-  ],
-  "auth": {
-    "type": "bearer",
-    "bearer": [
-      {
-        "key": "token",
-        "value": "{{bearer}}",
-        "type": "string"
-      }
-    ]
-  },
-  "event": [
-    {
-      "listen": "prerequest",
-      "script": {
-        "type": "text/javascript",
-        "exec": [
-          ""
-        ]
-      }
-    },
-    {
-      "listen": "test",
-      "script": {
-        "type": "text/javascript",
-        "packages": {},
-        "exec": [
-          ""
-        ]
-      }
-    }
-  ],
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "localhost:3000/api/v1",
-      "type": "string"
-    },
-    {
-      "key": "reminder",
-      "value": "",
-      "type": "string"
-    },
-    {
-      "key": "springSecGenPass",
-      "value": "",
-      "type": "string"
-    },
-    {
-      "key": "springAppPropsPass",
-      "value": "",
-      "type": "string"
-    },
-    {
-      "key": "seedAdminPass",
-      "value": "abcd1234"
-    },
-    {
-      "key": "seedCustomerPass",
-      "value": "abcd1234",
-      "type": "string"
-    },
-    {
-      "key": "bearer",
-      "value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiam9obkBzZXJ2ZXIuY29tIiwiZXhwIjoxNzE1NjA3MTY0LCJpYXQiOjE3MTU1MjA3NjQsInNjb3BlIjoiQURNSU4ifQ.ohUFxafwGiqkzGISETl1mi_hRdq9YOU3tqdNRJwgxcWKZ633kW-BHOruwbscyWIMGW2TK6fh8sQo8Dfa18GGiMvDtV8cYmp1Me5MfRVBYPgRVQOcWD-2r01vjdJDCyW-RjcJxNF_o-RFvDWZxrBMxQdltYn8r_-GRMzGPmP7ApHrdaZqaFwRg5XQ5GHw5DgQH5KRXGMzfDy_BpsnUhcq_cBtO2j1ezcmOsXnYZ5Cfo2u8AH5fh0EffI1hK6Osun8MU6YpwW38lFWynHZaKZJimszVygPsI4EQ3sfH-igl4pnlvEQWOQOoHW0RkygGEs_3RiDDWJ1NMWTdGoCOTGa4g",
-      "type": "string"
-    }
-  ]
+	"info": {
+		"_postman_id": "b762380a-0521-42b7-8fb6-5d3d53798f3a",
+		"name": "Electron Eon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22567242"
+	},
+	"item": [
+		{
+			"name": "Tests: general",
+			"item": [
+				{
+					"name": "TEST: admin only",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/admin-only",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"admin-only"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get identity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/identity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"identity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get UserDetails",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{seedAdminPass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "john@server.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jess@server.com\",\r\n    \"password\": \"abcd1234\",\r\n    \"firstName\": \"jess\",\r\n    \"lastName\": \"doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get all products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get product by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/2103757c-2e2d-4dfb-befd-987f4fcce43a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"2103757c-2e2d-4dfb-befd-987f4fcce43a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get products by category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products?category=computer-accessory",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "computer-accessory"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tests: admin",
+			"item": [
+				{
+					"name": "TEST: get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get user by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/users/1de64dad-aae0-4004-b4bc-f28c1f46589a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"1de64dad-aae0-4004-b4bc-f28c1f46589a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: update user by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"july@server.com\",\r\n    \"firstName\": \"july\",\r\n    \"lastName\": \"doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/1c6a97c1-da90-464a-95be-700549add2ea",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1c6a97c1-da90-464a-95be-700549add2ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: delete user by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"johndoe@server.com\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/1c6a97c1-da90-464a-95be-700549add2ea",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"1c6a97c1-da90-464a-95be-700549add2ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: add product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dell ABC Laptop\",\r\n    \"description\": \"Lorem ipsum dolor sit amet.\",\r\n    \"price\": 123.45,\r\n    \"category\": \"LAPTOP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: update product by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lenovo IdeaPad 1 Laptop\",\r\n    \"description\": \"Lorem ipsum dolor sit amet.\",\r\n    \"price\": 489.8,\r\n    \"category\": \"LAPTOP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/products/22cd8441-4277-4d7c-bafa-2cd8af3d5cc4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"products",
+								"22cd8441-4277-4d7c-bafa-2cd8af3d5cc4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: delete product by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lenovo IdeaPad 1 Laptop\",\r\n    \"description\": \"Lorem ipsum dolor sit amet.\",\r\n    \"price\": 489.8,\r\n    \"category\": \"LAPTOP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/products/22cd8441-4277-4d7c-bafa-2cd8af3d5cc4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"products",
+								"22cd8441-4277-4d7c-bafa-2cd8af3d5cc4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get all orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get order by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/orders/41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"orders",
+								"41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get order by user id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/orders/by-user-id/1de64dad-aae0-4004-b4bc-f28c1f46589a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"orders",
+								"by-user-id",
+								"1de64dad-aae0-4004-b4bc-f28c1f46589a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: update order by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"street\": \"456 GHI Street\",\r\n    \"city\": \"JKL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/orders/42ecab4a-344e-49ba-94f7-ac5f32fe1b82",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"orders",
+								"42ecab4a-344e-49ba-94f7-ac5f32fe1b82"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: delete order by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/orders/42ecab4a-344e-49ba-94f7-ac5f32fe1b82",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"orders",
+								"42ecab4a-344e-49ba-94f7-ac5f32fe1b82"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: add order product jt record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"42ecab4a-344e-49ba-94f7-ac5f32fe1b82\",\r\n    \"productId\": \"252c3087-57f7-4332-9b22-5d858b302783\",\r\n    \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/order-products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"order-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: update product quantity in order product jt record by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/order-products/3420cfa9-854d-4e53-b076-6d7493314c20/update-quantity?quantity=5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"order-products",
+								"3420cfa9-854d-4e53-b076-6d7493314c20",
+								"update-quantity"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: increment product quantity in order product jt record by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/order-products/3420cfa9-854d-4e53-b076-6d7493314c20/increment-quantity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"order-products",
+								"3420cfa9-854d-4e53-b076-6d7493314c20",
+								"increment-quantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: decrement product quantity in order product jt record by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/order-products/3420cfa9-854d-4e53-b076-6d7493314c20/decrement-quantity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"order-products",
+								"3420cfa9-854d-4e53-b076-6d7493314c20",
+								"decrement-quantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: delete order product jt record by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/order-products/3420cfa9-854d-4e53-b076-6d7493314c20",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"order-products",
+								"3420cfa9-854d-4e53-b076-6d7493314c20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: delete order product jt record by order id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/order-products/by-order-id/42ecab4a-344e-49ba-94f7-ac5f32fe1b82",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"order-products",
+								"by-order-id",
+								"42ecab4a-344e-49ba-94f7-ac5f32fe1b82"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get cart by user id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/carts/by-user-id/1de64dad-aae0-4004-b4bc-f28c1f46589a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"carts",
+								"by-user-id",
+								"1de64dad-aae0-4004-b4bc-f28c1f46589a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: delete cart by user id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/carts/by-user-id/1c6a97c1-da90-464a-95be-700549add2ea",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"carts",
+								"by-user-id",
+								"1c6a97c1-da90-464a-95be-700549add2ea"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tests: customer",
+			"item": [
+				{
+					"name": "TEST: get current user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"john@server.com\",\r\n    \"password\": \"abcd1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/users/current-user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"users",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: update current user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"josh@server.com\",\r\n    \"firstName\": \"josh\",\r\n    \"lastName\": \"doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/users/current-user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"users",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: delete current user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"johndoe@server.com\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/users/current-user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"users",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get all products with cart quantities for current user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get product with cart quantity by id for current user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/products/23d4364f-cd62-4e80-a017-3c16c43a7908",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"products",
+								"23d4364f-cd62-4e80-a017-3c16c43a7908"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get products with cart quantities by category for current user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/products?category=smartphone",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "smartphone"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get order by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/orders/41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"orders",
+								"41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get order for current user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/orders/current-user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"orders",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: add order for current user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"street\": \"123456 Main Street\",\r\n    \"city\": \"Main City\",\r\n    \"orderProducts\": [\r\n        {\r\n            \"productId\": \"252c3087-57f7-4332-9b22-5d858b302783\",\r\n            \"quantity\": 5\r\n        },\r\n        {\r\n            \"productId\": \"2621f16a-c94f-4225-b817-e54c4fb9d2b9\",\r\n            \"quantity\": 6\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/orders/current-user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"orders",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get order product jt record by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/order-products/31b7c3c0-83a4-42bb-97cc-de837b6015a7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"order-products",
+								"31b7c3c0-83a4-42bb-97cc-de837b6015a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get order product jt record by order id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/order-products/by-order-id/41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"order-products",
+								"by-order-id",
+								"41c0c8c8-6de5-4836-a934-bdbb5ba6bfd1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get cart by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/carts/51d5f27a-77c9-4fd0-993d-2e2c2c529a0b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"carts",
+								"51d5f27a-77c9-4fd0-993d-2e2c2c529a0b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: get cart for current user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/carts/current-user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"carts",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: upsert product quantity in cart for current user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/carts/current-user/products/24f8ae7f-de04-4e4e-aa53-2cea8974a861/upsert-quantity?quantity=5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"carts",
+								"current-user",
+								"products",
+								"24f8ae7f-de04-4e4e-aa53-2cea8974a861",
+								"upsert-quantity"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: increment product quantity in cart for current user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/carts/current-user/products/24f8ae7f-de04-4e4e-aa53-2cea8974a861/increment-quantity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"carts",
+								"current-user",
+								"products",
+								"24f8ae7f-de04-4e4e-aa53-2cea8974a861",
+								"increment-quantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: decrement product quantity in cart for current user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/carts/current-user/products/24f8ae7f-de04-4e4e-aa53-2cea8974a861/decrement-quantity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"carts",
+								"current-user",
+								"products",
+								"24f8ae7f-de04-4e4e-aa53-2cea8974a861",
+								"decrement-quantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: update product quantity in cart by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/carts/54360ebf-2a68-4dcc-b9d2-c12c38e1be21/update-quantity?quantity=5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"carts",
+								"54360ebf-2a68-4dcc-b9d2-c12c38e1be21",
+								"update-quantity"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: increment product quantity in cart by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/carts/54360ebf-2a68-4dcc-b9d2-c12c38e1be21/increment-quantity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"carts",
+								"54360ebf-2a68-4dcc-b9d2-c12c38e1be21",
+								"increment-quantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: decrement product quantity in cart by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/carts/54360ebf-2a68-4dcc-b9d2-c12c38e1be21/decrement-quantity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"carts",
+								"54360ebf-2a68-4dcc-b9d2-c12c38e1be21",
+								"decrement-quantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: delete cart by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/carts/54360ebf-2a68-4dcc-b9d2-c12c38e1be21",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"carts",
+								"54360ebf-2a68-4dcc-b9d2-c12c38e1be21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST: delete cart for current user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customer/carts/current-user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customer",
+								"carts",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login: admin (to get bearer token)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{seedAdminPass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "john@server.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"john@server.com\",\r\n    \"password\": \"abcd1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login: customer (to get bearer token)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{seedAdminPass}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "john@server.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearer}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "reminder",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "springSecGenPass",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "springAppPropsPass",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "seedAdminPass",
+			"value": "abcd1234"
+		},
+		{
+			"key": "seedCustomerPass",
+			"value": "abcd1234",
+			"type": "string"
+		},
+		{
+			"key": "bearer",
+			"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiam9obkBzZXJ2ZXIuY29tIiwiZXhwIjoxNzE1NjA3MTY0LCJpYXQiOjE3MTU1MjA3NjQsInNjb3BlIjoiQURNSU4ifQ.ohUFxafwGiqkzGISETl1mi_hRdq9YOU3tqdNRJwgxcWKZ633kW-BHOruwbscyWIMGW2TK6fh8sQo8Dfa18GGiMvDtV8cYmp1Me5MfRVBYPgRVQOcWD-2r01vjdJDCyW-RjcJxNF_o-RFvDWZxrBMxQdltYn8r_-GRMzGPmP7ApHrdaZqaFwRg5XQ5GHw5DgQH5KRXGMzfDy_BpsnUhcq_cBtO2j1ezcmOsXnYZ5Cfo2u8AH5fh0EffI1hK6Osun8MU6YpwW38lFWynHZaKZJimszVygPsI4EQ3sfH-igl4pnlvEQWOQOoHW0RkygGEs_3RiDDWJ1NMWTdGoCOTGa4g",
+			"type": "string"
+		}
+	]
 }
