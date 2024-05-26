@@ -9,7 +9,7 @@
         <version>3.2.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.fdmgroup</groupId>
+    <groupId>dev.by</groupId>
     <artifactId>electron-eon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>electron-eon</name>
