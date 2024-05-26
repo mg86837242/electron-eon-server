@@ -43,15 +43,17 @@ public class AuthController {
         System.out.println("creds: " + authentication.getCredentials());
         System.out.println("detls: " + authentication.getDetails());
         System.out.println("princ: " + authentication.getPrincipal());
-        System.out.println("auths: " + authentication.getAuthorities());
+        System.out.println("roles: " + authentication.getAuthorities());
 
         return "Hello, " + authentication.getName();
     }
 
+    // NB For `@PreAuthorize` annot. to work, `@EnableMethodSecurity` needs
+    // to be added to the `SecurityConfig` class
     // "SCOPE_" prefix comes from OAuth 2.0 spec and is used to represent the
     // scopes associated with access tokens
     @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
-    @GetMapping("/adminonly")
+    @GetMapping("/admin/admin-only")
     public String example() {
         return "Hello, admin!";
     }

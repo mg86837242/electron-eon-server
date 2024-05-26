@@ -8,6 +8,7 @@ import org.springframework.security.authentication.InsufficientAuthenticationExc
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.nio.file.AccessDeniedException;
 import java.time.LocalDateTime;
 
 @ControllerAdvice
@@ -45,7 +46,28 @@ public class DefaultExceptionHandler {
         return new ResponseEntity<>(apiError, HttpStatus.UNAUTHORIZED);
     }
 
-    // 403
+    // 403 - `AccessDeniedException` is thrown when an authenticated user
+    // attempts to access a resource for which they do not have the necessary
+    // permissions => this handler might be redundant, further observations
+    // are needed
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<ApiError> handleAccessDeniedException(
+            AccessDeniedException e,
+            HttpServletRequest request
+    ) {
+        ApiError apiError = new ApiError(
+                request.getRequestURI(),
+                e.getMessage(),
+                HttpStatus.FORBIDDEN.value(),
+                LocalDateTime.now()
+        );
+        return new ResponseEntity<>(apiError, HttpStatus.FORBIDDEN);
+    }
+
+    // 403 - `InsufficientAuthenticationException` is thrown when a req is
+    // received that requires authentication, but the curr user is not
+    // authenticated or does not have sufficient authentication credentials
+    // => this handler might be redundant, further observations are needed
     @ExceptionHandler(InsufficientAuthenticationException.class)
     public ResponseEntity<ApiError> handleException(
             InsufficientAuthenticationException e,
