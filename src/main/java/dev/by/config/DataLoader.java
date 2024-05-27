@@ -13,7 +13,8 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Configuration class for loading test data into the application.
- * This class defines methods to run test scripts for Data Access Services (DAS).
+ * This class defines methods to run test scripts for Data Access Services
+ * (DAS).
  * This class and its variation can be later used for database seeding.
  */
 @Configuration
@@ -31,8 +32,7 @@ public class DataLoader {
             ProductDaoTestUtil pdtu,
             CartDaoTestUtil cdtu,
             OrderDaoTestUtil odtu,
-            OrderProductDaoTestUtil opdtu
-    ) {
+            OrderProductDaoTestUtil opdtu) {
         this.udtu = udtu;
         this.pdtu = pdtu;
         this.cdtu = cdtu;
@@ -40,6 +40,7 @@ public class DataLoader {
         this.opdtu = opdtu;
     }
 
+    @SuppressWarnings("unused")
     private void runTestScriptsForDAS() {
         udtu.insertUser();
         udtu.selectAllUsers();
@@ -77,8 +78,7 @@ public class DataLoader {
     }
 
     @Bean
-    public ApplicationRunner runner(
-    ) {
+    public ApplicationRunner runner() {
         return args -> {
             helloDataLoader();
             seedDatabase();
