@@ -31,6 +31,6 @@ public interface ProductWithQtyInCartProjection {
 // References:
 // -- bug: "No converter found capable of converting from type
 // [org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap]"
-// => https://stackoverflow.com/questions/52591535/spring-jpa-no-converter-found-capable-of-converting-from-type
-// -- further explanation on projections: https://medium.com/@AlexanderObregon/optimizing-queries-with-query-annotation-in-spring-data-jpa-fe213c8a60a
+// -- further explanations for projections: https://medium.com/@AlexanderObregon/optimizing-queries-with-query-annotation-in-spring-data-jpa-fe213c8a60a
+//    => https://stackoverflow.com/questions/52591535/spring-jpa-no-converter-found-capable-of-converting-from-type
 // -- bug: "jpa projection all null" => https://stackoverflow.com/questions/69843383/spring-boot-interface-projection-only-returns-null

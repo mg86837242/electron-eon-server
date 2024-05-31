@@ -14,7 +14,7 @@ public record OrderWithProductsDTO(
         LocalDateTime createdAt,
         List<NestedOrderProductWithNoOrderDTO> orderProducts
 ) {
-    // NB Don't use "Records style" to generate getters if this is a regular
-    // class, or else Spring will run into a bug: "Could not find acceptable
-    // representation": https://stackoverflow.com/questions/46990169/could-not-find-acceptable-representation
+    // NB Don't use Intellij's "Records style" to generate getters if this is a
+    // regular class, or else Spring will run into a bug: "Could not find
+    // acceptable representation": https://stackoverflow.com/questions/46990169/could-not-find-acceptable-representation
 }

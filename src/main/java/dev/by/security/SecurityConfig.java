@@ -71,7 +71,8 @@ public class SecurityConfig {
                 )
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .sessionManagement(session -> session.sessionCreationPolicy(
-                        SessionCreationPolicy.STATELESS))
+                        SessionCreationPolicy.STATELESS
+                ))
                 .oauth2ResourceServer(server -> server.jwt(Customizer.withDefaults()))
                 .httpBasic(Customizer.withDefaults())
                 .build();

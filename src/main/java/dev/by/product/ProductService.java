@@ -78,8 +78,9 @@ public class ProductService {
                         "User not found based on the principal's email: " + email
                 ));
 
-        // User DTO (interface-based projections) to add the `quantity` field
-        // of the `Cart` entity to each `Product` object in the list
+        // Use interface-based project (or classed-based, aka DTO) to add the
+        // `quantity` field of the `Cart` entity to each `Product` object in
+        // the list
         return productRepository.findAllProductsWithQtyInCartByUserIdAndIsArchivedFalse(
                 userId);
     }
@@ -99,8 +100,8 @@ public class ProductService {
                         "User not found based on the principal's email: " + email
                 ));
 
-        // User DTO (interface-based projections) to add the `quantity` field
-        // of the `Cart` entity to the `Product` object
+        // Use interface-based project (or classed-based, aka DTO) to add the
+        // `quantity` field of the `Cart` entity to the `Product` object
         return productRepository
                 .findProductWithQtyInCartByUserIdAndByIdAndIsArchivedFalse(
                         userId,
@@ -134,8 +135,9 @@ public class ProductService {
                         "Invalid path variable"
                 ));
 
-        // User DTO (interface-based projections) to add the `quantity` field
-        // of the `Cart` entity to each `Product` object in the list
+        // Use interface-based project (or classed-based, aka DTO) to add the
+        // `quantity` field of the `Cart` entity to each `Product` object in
+        // the list
         return productRepository.findProductsWithQtyInCartByUserIdAndCategoryAndIsArchivedFalse(
                 userId, category);
     }
