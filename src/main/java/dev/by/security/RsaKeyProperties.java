@@ -10,5 +10,4 @@ public record RsaKeyProperties(
         RSAPublicKey publicKey,
         RSAPrivateKey privateKey
 ) {
-
 }

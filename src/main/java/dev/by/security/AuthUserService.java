@@ -26,7 +26,6 @@ public class AuthUserService implements UserDetailsService {
 
         return new AuthUser(user);
     }
-
 }
 
 // References:
