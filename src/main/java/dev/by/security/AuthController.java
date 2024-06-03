@@ -60,5 +60,5 @@ public class AuthController {
 }
 
 // References:
-// -- @PreAuthorize annotation example && main guide for JWT in Spring: https://github.com/danvega/jwt/blob/master/src/main/java/dev/danvega/jwt/controller/HomeController.java
+// -- `@PreAuthorize` annot. example && main guide for JWT in Spring: https://github.com/danvega/jwt/blob/master/src/main/java/dev/danvega/jwt/controller/HomeController.java
 // -- Spring Security Expressions: https://www.baeldung.com/spring-security-expressions
