@@ -18,7 +18,7 @@ public class UserCustomerController {
 
     @GetMapping("/current-user")
     public ResponseEntity<UserDTO> getCurrUser(Authentication authn) {
-        UserDTO user = userService.getUserByAuthn(authn);
+        UserDTO user = userService.getCurrUser(authn);
 
         return ResponseEntity.ok(user);
     }
@@ -28,7 +28,7 @@ public class UserCustomerController {
             Authentication authn,
             @RequestBody UserUpdateRequest request
     ) {
-        userService.updateUserByAuthn(authn, request);
+        userService.updateCurrUser(authn, request);
 
         return ResponseEntity.ok().build();
     }
@@ -37,6 +37,6 @@ public class UserCustomerController {
     public void deleteCurrUser(
             Authentication authn
     ) {
-        userService.deleteUserByAuthn(authn);
+        userService.deleteCurrUser(authn);
     }
 }

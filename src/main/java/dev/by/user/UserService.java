@@ -62,7 +62,7 @@ public class UserService {
                 ));
     }
 
-    public UserDTO getUserByAuthn(Authentication authn) {
+    public UserDTO getCurrUser(Authentication authn) {
         String email = authn.getName();
 
         return userRepository.findByEmail(email)
@@ -121,7 +121,7 @@ public class UserService {
         updateUserUtil(user, request);
     }
 
-    public void updateUserByAuthn(
+    public void updateCurrUser(
             Authentication authn,
             UserUpdateRequest request
     ) {
@@ -201,7 +201,7 @@ public class UserService {
     }
 
     @Transactional
-    public void deleteUserByAuthn(Authentication authn) {
+    public void deleteCurrUser(Authentication authn) {
         String email = authn.getName();
 
         UUID userId = userRepository

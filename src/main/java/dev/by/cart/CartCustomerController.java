@@ -27,7 +27,7 @@ public class CartCustomerController {
 
     @GetMapping("/current-user")
     public List<CartDTO> getCartsForCurrUser(Authentication authn) {
-        return cartService.getCartsByAuthn(authn);
+        return cartService.getCartsForCurrUser(authn);
     }
 
     // For catalogue page
@@ -98,6 +98,6 @@ public class CartCustomerController {
 
     @DeleteMapping("/current-user")
     public void deleteCartForCurrUser(Authentication authn) {
-        cartService.deleteCartByAuthn(authn);
+        cartService.deleteCartForCurrUser(authn);
     }
 }

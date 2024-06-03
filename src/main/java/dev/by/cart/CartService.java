@@ -53,7 +53,7 @@ public class CartService {
                 .collect(Collectors.toList());
     }
 
-    public List<CartDTO> getCartsByAuthn(Authentication authn) {
+    public List<CartDTO> getCartsForCurrUser(Authentication authn) {
         String email = authn.getName();
 
         isEmailExisting(email);
@@ -272,7 +272,7 @@ public class CartService {
     }
 
     @Transactional
-    public void deleteCartByAuthn(Authentication authn) {
+    public void deleteCartForCurrUser(Authentication authn) {
         String email = authn.getName();
 
         isEmailExisting(email);
