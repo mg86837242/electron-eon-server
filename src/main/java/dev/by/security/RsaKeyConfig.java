@@ -13,5 +13,5 @@ public class RsaKeyConfig {
 // adding `@EnableConfigurationProperties(RsaKeyProperties.class)` to the
 // main class: https://www.baeldung.com/spring-enable-config-properties
 // -- alternatively, use `@ConfigurationPropertiesScan` to replace the
-// `@EnableConfigurationProperties(RsaKeyProperties.class)` in this file
-// would also work
+// `@EnableConfigurationProperties(RsaKeyProperties.class)` in this file,
+// which would also work: https://www.baeldung.com/configuration-properties-in-spring-boot#1-spring-boot-22
