@@ -24,7 +24,7 @@ public class UserCustomerController {
     }
 
     @PatchMapping("/current-user")
-    public ResponseEntity<User> updateCurrUser(
+    public ResponseEntity<UserDTO> updateCurrUser(
             Authentication authn,
             @RequestBody UserUpdateRequest request
     ) {

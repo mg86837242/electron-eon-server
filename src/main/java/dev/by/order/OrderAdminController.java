@@ -46,7 +46,7 @@ public class OrderAdminController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Order> updateOrderById(
+    public ResponseEntity<OrderDTO> updateOrderById(
             @PathVariable UUID id,
             @RequestBody OrderUpdateRequest request
     ) {

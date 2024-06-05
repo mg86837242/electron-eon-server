@@ -32,7 +32,7 @@ public class ProductAdminController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Product> updateProductById(
+    public ResponseEntity<ProductDTO> updateProductById(
             @PathVariable UUID id,
             @RequestBody ProductUpdateRequest request
     ) {

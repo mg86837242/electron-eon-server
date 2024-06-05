@@ -40,7 +40,7 @@ public class UserAdminController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<User> updateUserById(
+    public ResponseEntity<UserDTO> updateUserById(
             @PathVariable UUID id,
             @RequestBody UserUpdateRequest request
     ) {
