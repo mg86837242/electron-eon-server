@@ -65,7 +65,9 @@ public class OrderService {
     public OrderWithProductsDTO getOrderById(UUID orderId) {
         Order order = orderRepository
                 .findById(orderId)
-                .orElseThrow(() -> new NotFoundException("Order " + orderId + " not found"));
+                .orElseThrow(() -> new NotFoundException(
+                        "Order " + orderId + " not found"
+                ));
 
         List<OrderProduct> orderProducts =
                 orderProductRepository.findByOrderId(orderId);
@@ -101,7 +103,6 @@ public class OrderService {
                     "Order " + orderId + " not found"
             );
         }
-
     }
 
     public void isUserExisting(UUID userId) {

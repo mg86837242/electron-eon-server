@@ -33,7 +33,7 @@ public class Order {
     @Column(nullable = false)
     private String city;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    // @see: https://www.baeldung.com/hibernate-date-time
     private LocalDateTime createdAt;
 
     public Order() {
