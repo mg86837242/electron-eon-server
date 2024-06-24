@@ -15,6 +15,8 @@ from [here](https://slproweb.com/products/Win32OpenSSL.html):
 
 	openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in keypair.pem -out private.pem
 
+## Put the `public.pem` and `private.pem` in the `src/main/resources/certs`
+
 Once done, you can delete keypair.pem
 
 Credit: https://www.danvega.dev/blog/2022/09/06/spring-security-jwt/

@@ -85,7 +85,8 @@ public class SecurityConfig {
     }
 
     /*
-     * This will allow the /token endpoint to use basic auth and everything else uses the SFC above
+     * This will allow the /auth/login endpoint to use basic auth and
+     * everything else uses the SFC above
      */
     @Order(Ordered.HIGHEST_PRECEDENCE)
     @Bean
@@ -111,7 +112,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(List.of("http://localhost:5173")); // front end port
+        configuration.setAllowedOrigins(List.of("http://localhost:5173")); // front-end port
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setExposedHeaders(List.of("*"));
         configuration.setAllowedMethods(List.of(
